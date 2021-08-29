@@ -1,19 +1,21 @@
-#row {
+ #row {
     display: table;
 }
-#col {
+.col {
     display: table-cell;
+    background-color: none;
+    width: 16px;
+    height: 16px;
+}
 
-    width: 15px;
-    height: 15px;
-    border: 1px solid;
-}
-#col:hover {
-    background-color: rgb(22, 8, 8); /*Optional*/
-}
 #container {
     border-style: solid;
     border-color: blue;
-    width: 260px;
+    margin: auto;
+}
+#master {
     text-align: center;
+}
+#floater {
+    float: left;
 }
