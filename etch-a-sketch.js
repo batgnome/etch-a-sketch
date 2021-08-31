@@ -1,5 +1,5 @@
 function createCanvas(width = 16){
-  
+    if(document.getElementById('container').hasChildNodes){deleteCanvas();}
     document.getElementById('container').setAttribute(
         'style', 
             `width: ${(width*16)}px;
@@ -17,10 +17,14 @@ function createCanvas(width = 16){
             row.appendChild(col);
         }
     }
+    addMouseEvents();
 }
 
 function deleteCanvas() {
-
+     canvas = document.querySelector('div#container');
+     while(canvas.hasChildNodes()) {
+         canvas.removeChild(canvas.firstChild);
+     }
 }
 function clearBoard() {
     console.log("clear");
@@ -29,12 +33,14 @@ function clearBoard() {
         e.setAttribute("style", "background-color: white"); 
     })
 }
-createCanvas(32);
-divs = document.querySelectorAll('div.col');
-divs.forEach( (e)=>{
-    e.addEventListener("mouseover", ()=> {
+function addMouseEvents() {
+    divs = document.querySelectorAll('div.col');
+    divs.forEach( (e)=>{
+        e.addEventListener("mouseover", ()=> {
+            
+            e.setAttribute('style', "background-color: black")
+        });
         
-        e.setAttribute('style', "background-color: black")
     });
-        
-});
+}
+createCanvas();

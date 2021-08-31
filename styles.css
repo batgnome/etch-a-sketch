@@ -19,3 +19,20 @@
 #floater {
     float: left;
 }
+.btn-group {
+    float: left;
+}
+.btn-group input {
+    padding: 10px 24px; /* Some padding */
+    width: 20%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+  }
+  
+  .btn-group input:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+  }
+  
+  /* Add a background color on hover */
+  .btn-group input:hover {
+    background-color: #3e8e41;
+  }
