@@ -1,4 +1,5 @@
 function createCanvas(width = 16){
+    if(width > 50) {width = 50}
     if(document.getElementById('container').hasChildNodes){deleteCanvas();}
     document.getElementById('container').setAttribute(
         'style', 
